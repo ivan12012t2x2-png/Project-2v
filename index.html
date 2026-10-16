@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#12121f">
+<title>КодоПуть</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- СТАРТ -->
+  <div class="screen active" id="screen-start">
+    <div class="start-wrap">
+      <div class="hero-emoji">🤖</div>
+      <h1>КодоПуть</h1>
+      <p class="subtitle">Твой первый шаг в программирование</p>
+      <p class="topic">Тема модуля: <b>Алгоритмы</b></p>
+      <div class="start-btn-wrap">
+        <button class="btn" onclick="startOnboarding()">🚀 Начать обучение</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ОНБОРДИНГ -->
+  <div class="screen" id="screen-onboard">
+    <div class="onboard-step" id="onboard-content"></div>
+    <div class="footer-actions">
+      <button class="btn" id="onboard-next" onclick="nextOnboard()">Далее</button>
+    </div>
+  </div>
+
+  <!-- КАРТА УРОКОВ -->
+  <div class="screen" id="screen-map">
+    <div class="topbar">
+      <div class="stat">⭐ <span id="map-score">0</span></div>
+      <div class="spacer"></div>
+      <div class="stat">🏆 <span id="map-badges">0</span>/3</div>
+    </div>
+    <h2>Карта путешествия</h2>
+    <p class="map-hint">Пройди 3 урока и стань Алгоритмистом!</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="map-progress"></div></div>
+      <div class="progress-label" id="map-progress-label">0 / 3 уроков</div>
+    </div>
+    <div id="lessons-list"></div>
+  </div>
+
+  <!-- УРОК -->
+  <div class="screen" id="screen-lesson">
+    <div class="topbar">
+      <span class="icon" onclick="goMap()" style="cursor:pointer">←</span>
+      <div class="stat" id="lesson-title-bar">Урок 1</div>
+      <div class="spacer"></div>
+      <div class="stat">⭐ <span id="lesson-score">0</span></div>
+    </div>
+    <div class="lesson-content" id="lesson-content"></div>
+    <div class="footer-actions" id="lesson-actions"></div>
+  </div>
+
+  <!-- ФИНАЛ -->
+  <div class="screen" id="screen-final">
+    <div class="start-wrap">
+      <div class="hero-emoji">🎉</div>
+      <h1>Модуль пройден!</h1>
+      <p>Ты освоил основы алгоритмов!</p>
+      <div class="badges" id="final-badges"></div>
+      <div class="final-stats">
+        <div class="stat-box"><div class="val" id="final-lessons">3</div><div class="lbl">уроков</div></div>
+        <div class="stat-box"><div class="val" id="final-score">0</div><div class="lbl">очков</div></div>
+      </div>
+      <p class="reward">🏅 Награда: «Алгоритмист-новичок»</p>
+      <div class="footer-actions final-actions">
+        <button class="btn" onclick="restartModule()">🔁 Пройти заново</button>
+        <button class="btn secondary" onclick="goMap()">К карте уроков</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
